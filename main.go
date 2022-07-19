@@ -20,7 +20,7 @@ func getUsers(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, users)
 }
 
-func postAlbums(c *gin.Context) {
+func postUsers(c *gin.Context) {
 	var newUser user
 
 	// Call BindJSON to bind the received JSON to
@@ -37,7 +37,7 @@ func postAlbums(c *gin.Context) {
 func main() {
 	router := gin.Default()
 	router.GET("/users", getUsers)
-	router.POST("/albums", postAlbums)
+	router.POST("/users", postUsers)
 
-	router.Run("localhost:8080")
+	router.Run() //par défault 8080
 }
